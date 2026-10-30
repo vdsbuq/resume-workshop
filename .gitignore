@@ -4,5 +4,8 @@ node_modules/
 !.env.example
 .vercel/
 .netlify/
+.open-next/
+.wrangler/
+.dev.vars*
 *.tsbuildinfo
 test-results/

@@ -2,6 +2,12 @@
 
 日期：2026-10-30
 
+## Cloudflare 更新
+
+- OpenNext 构建成功，Worker `resume-workshop` 发布成功，服务端 Secrets 已写入。
+- 地址：https://resume-workshop.resume-workshop.workers.dev。
+- 首次访问遇到 TLS 握手失败，尚不能将匿名访问和线上 AI 记为通过。
+
 ## 已通过
 
 - `pnpm test`：四组测试通过，包括备份往返、损坏格式、重复 ID、超量条目、未知属性过滤；AI 配置、口令、输入校验、模拟成功、超时、无有效结果、上游错误及来源校验。
