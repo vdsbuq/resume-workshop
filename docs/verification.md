@@ -15,10 +15,13 @@
 - 浏览器：真实 AI 润色、采纳及撤销恢复原文已通过。
 - 浏览器：下载 JSON 备份，选择同一文件导入并确认，内容恢复正常。
 - GitHub 仓库已创建并上传：https://github.com/vdsbuq/resume-workshop。
+- Netlify 构建与部署成功，生产地址为 https://vdsbuq-resume-workshop.netlify.app。
+- 匿名请求生产地址返回 401（Netlify 登录限制），并非公开可访问。
+- 用户随后报告 Netlify 账号被暂停，无法进入控制台修改项目可见性；线上 AI 验收暂时受阻。
 
 ## 尚待完成
 
 - Edge 中实际导出一页及多页 PDF，检查中文、分页与双栏布局。内置浏览器打印动作超时，不能视为通过。
-- Netlify 部署以及未登录访问验证。Vercel 账号待申诉审核，经用户确认改用 Netlify 免费方案。
+- Netlify 账号恢复、项目设为公开后，重新验证匿名访问和线上 AI。Vercel 账号亦待申诉审核。
 
 这些事项完成前，不应将整个项目表述为已发布或全部验收通过。
