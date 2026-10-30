@@ -65,7 +65,17 @@ pnpm start
 5. 选择模板，点击「导出 PDF」。在浏览器打印窗口中选择「另存为 PDF」、A4、100% 缩放，关闭页眉和页脚。
 6. 定期下载备份；换设备或清理浏览器前尤其需要备份。
 
-## 部署到 Vercel
+## 部署到 Netlify（当前方案）
+
+在 Netlify Free 账号中导入本 GitHub 仓库，使用仓库内 `netlify.toml`：构建命令为 `pnpm build`，发布目录为 `.next`，Node.js 版本为 22。Netlify 自动适配 Next.js 的页面与服务端接口，不应把项目当作纯静态网站部署。
+
+在 Netlify 环境变量设置中填写 `DEEPSEEK_API_KEY`、`DEMO_PASSWORD` 和 `DEEPSEEK_MODEL`，允许服务端 Functions 使用，随后重新部署。不要使用 `NEXT_PUBLIC_` 前缀。密钥和演示口令不进入仓库。
+
+发布后验证在线页面、AI、备份和打印，并将实际地址填入 README 顶部。免费方案有使用额度，应关注控制台用量。
+
+参考：[Netlify Next.js 支持](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/)。
+
+## 备选：部署到 Vercel
 
 1. 将代码提交到自己的 GitHub 仓库，包含 `pnpm-lock.yaml`，不上传 `node_modules`、`.next` 和任何真实密钥。
 2. 在 Vercel 中导入该仓库，框架选择 Next.js，根目录为仓库根目录。
