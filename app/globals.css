@@ -1407,3 +1407,20 @@ main {
   .sticker-green { background: #dff0e5; border-color: #c6dfd0; color: #4e785c; }
   .hero-paper-seal { background: #fff0d3; color: #b18a43; }
 }
+
+/* Resume typography: readable body text with quieter supporting details. */
+.resume-sheet { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.resume-sheet.academic { font-family: "Times New Roman", "Songti SC", SimSun, serif; }
+.resume-sheet .resume-entry ul, .resume-sheet .summary-text, .resume-sheet .resume-skills p { color: #38465a; }
+.resume-sheet .entry-subtitle, .resume-sheet .entry-heading > span, .resume-sheet .resume-contact { color: #566174; }
+.resume-sheet.academic .resume-entry ul, .resume-sheet.academic .summary-text, .resume-sheet.academic .resume-skills p { color: #222; }
+@media screen {
+  .resume-sheet .resume-entry ul, .resume-sheet .summary-text, .resume-sheet .resume-skills p { font-size: 10px; line-height: 1.7; }
+  .resume-sheet .entry-subtitle, .resume-sheet .entry-heading > span, .resume-sheet .resume-contact { font-size: 9px; }
+}
+@media print {
+  .resume-sheet .resume-entry ul, .resume-sheet .summary-text, .resume-sheet .resume-skills p { font-size: 10pt !important; line-height: 1.55; }
+  .resume-sheet .entry-subtitle, .resume-sheet .entry-heading > span, .resume-sheet .resume-contact { font-size: 9pt !important; }
+  .resume-sheet .entry-heading h3 { font-size: 10.5pt !important; }
+  .resume-sheet .resume-section h2 { font-size: 11.5pt !important; }
+}
