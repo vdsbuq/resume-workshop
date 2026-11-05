@@ -1372,3 +1372,38 @@ main {
 @media (max-width: 1050px) { .hero-art { margin-right: 0; width: 240px; } .journey-cards > div { padding: 16px 12px; gap: 9px; } .journey-number { display: none; } }
 @media (max-width: 700px) { .page-heading { padding: 24px 20px; min-height: auto; } .page-heading h1 { font-size: 27px; } .hero-art { display: none; } .journey-cards { grid-template-columns: 1fr; gap: 8px; } .journey-cards > div { padding: 12px 16px; } .journey-cards small { display: none; } .journey-cards p { margin-top: 3px; } .journey-number { display: block; } }
 @media print { .journey-cards,.hero-art { display: none !important; } }
+
+/* Restrained pastel palette for the application chrome only. */
+@media screen {
+  body { background: #f7f8fc; }
+  .page-heading { background: radial-gradient(ellipse at 92% 10%, #e1eee9 0%, transparent 42%), linear-gradient(115deg, #eaf1ff, #f3f0fc 65%, #edf6f2); border-color: #dce3f1; }
+  .page-heading h1 > span { color: #8992c9; }
+  .feature-chips span:first-child { background: #e6eeff; border-color: #d1dff8; color: #4c6da9; }
+  .feature-chips span:nth-child(2) { background: #ede7fa; border-color: #ded4f0; color: #79629d; }
+  .feature-chips span:nth-child(3) { background: #dff1e9; border-color: #cce5d9; color: #467760; }
+  .journey-cards > div:nth-child(1) { background: #edf3ff; border-color: #d4e1f7; }
+  .journey-cards > div:nth-child(2) { background: #f3edfb; border-color: #e3d8f2; }
+  .journey-cards > div:nth-child(3) { background: #eaf5ee; border-color: #d2e7da; }
+  .journey-cards > div:nth-child(1) .journey-icon { background: #dce8ff; color: #4870b2; }
+  .journey-cards > div:nth-child(2) .journey-icon { background: #e7dcf5; color: #8060a5; }
+  .journey-cards > div:nth-child(3) .journey-icon { background: #d5ebdd; color: #4c8264; }
+  .journey-cards small { color: #73829b; }
+  .journey-number { color: #c7d7ef; opacity: .65; }
+  .journey-cards > div:nth-child(2) .journey-number { color: #d3c4e6; }
+  .journey-cards > div:nth-child(3) .journey-number { color: #bddac9; }
+  .job-analysis { border-color: #dedcf0; }
+  .job-analysis summary { background: linear-gradient(105deg,#eeebfa,#f9f7fd 75%); }
+  .analysis-icon { background: #f9f6ff; border-color: #ded5ef; color: #8265ac; }
+  .analysis-tag { background: #e6def5; color: #745792; }
+  .analysis-steps b { background: #eee8f9; color: #7a609e; }
+  .analysis-settings { background: #f7f4fc; border-color: #e8e1f3; }
+  .writing-tip { background: #fff8ec; border-color: #f1e4cd; border-left-color: #d9b274; }
+  .writing-tip > span { color: #b58b45; }
+  .writing-tip strong { color: #8b6a35; }
+  .writing-tip p { color: #8c7c62; }
+  .editor-intro { background: linear-gradient(110deg,#edf4ff,#fff 85%); }
+  .preview-toolbar { background: #eef3fa; }
+  .sticker-blue { background: #f1ebfc; border-color: #ded2ee; color: #7c60a2; }
+  .sticker-green { background: #dff0e5; border-color: #c6dfd0; color: #4e785c; }
+  .hero-paper-seal { background: #fff0d3; color: #b18a43; }
+}
