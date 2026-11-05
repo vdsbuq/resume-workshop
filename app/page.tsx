@@ -403,7 +403,7 @@ export default function Home() {
         <main>
           <div className="page-heading">
             <div>
-              <div className="eyebrow">让每一段经历，都被看见</div>
+              <div className="eyebrow">RESUME STUDIO · 你的求职工作台</div>
               <h1>
                 把经历，写成机会<span>.</span>
               </h1>
@@ -414,15 +414,17 @@ export default function Home() {
                 <span><ShieldCheck size={13} /> 本地自动保存</span>
               </div>
             </div>
-            <div className="heading-note note-sticker">
-              <span className="tiny-spark">
-                <Sparkles size={19} />
-              </span>
-              <div>
-                你的经历，值得更好的表达
-                <small>真实内容 × 清晰排版 × AI 灵感</small>
-              </div>
+            <div className="hero-art" aria-hidden="true">
+              <span className="hero-orbit orbit-one" /><span className="hero-orbit orbit-two" />
+              <div className="hero-paper"><div className="hero-paper-top"><span /><i /></div><b /><i /><i /><b /><i /><i /><i /><div className="hero-paper-seal"><Check size={16} /></div></div>
+              <span className="hero-sticker sticker-blue"><Sparkles size={15} /> 把经历写清楚</span>
+              <span className="hero-sticker sticker-green"><Check size={14} /> 为下一次机会做准备</span>
             </div>
+          </div>
+          <div className="journey-cards" aria-label="使用步骤">
+            <div><span className="journey-icon"><PenLine size={20} /></span><div><small>STEP 01</small><strong>整理你的经历</strong><p>填写教育、项目与实习，实时查看效果</p></div><span className="journey-number" aria-hidden="true">01</span></div>
+            <div><span className="journey-icon"><Sparkles size={20} /></span><div><small>STEP 02</small><strong>找到岗位契合点</strong><p>对照岗位要求，用真实证据完善表达</p></div><span className="journey-number" aria-hidden="true">02</span></div>
+            <div><span className="journey-icon"><FileText size={20} /></span><div><small>STEP 03</small><strong>准备好投递</strong><p>选择简历风格，检查并导出 PDF</p></div><span className="journey-number" aria-hidden="true">03</span></div>
           </div>
           <JobAnalysis resume={resume} />
           <div className="workspace-toolbar">
