@@ -1,3 +1,12 @@
+export const templates = {
+  classic: { name: "经典单栏", description: "蓝色分隔，清晰稳重" },
+  sidebar: { name: "简洁双栏", description: "技能侧栏，突出信息层次" },
+  academic: { name: "学术黑白", description: "居中抬头，适合学术与正式申请" },
+  modern: { name: "现代简约", description: "留白与细线，突出项目经历" },
+  elegant: { name: "雅致商务", description: "衬线标题，沉稳而有辨识度" },
+} as const;
+export type TemplateKey = keyof typeof templates;
+
 export type SectionKey = "education" | "projects" | "experience";
 export type Entry = {
   id: string;
@@ -8,7 +17,7 @@ export type Entry = {
 };
 export type Resume = {
   version: 1;
-  template: "classic" | "sidebar";
+  template: TemplateKey;
   personal: {
     name: string;
     role: string;
@@ -111,7 +120,7 @@ export function parseResume(value: unknown): Resume {
   const r = value as Resume;
   if (
     r.version !== 1 ||
-    !["classic", "sidebar"].includes(r.template) ||
+    !Object.hasOwn(templates, r.template) ||
     !r.personal ||
     !isText(r.skills)
   )

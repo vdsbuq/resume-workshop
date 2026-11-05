@@ -28,6 +28,8 @@ import {
   PenLine,
 } from "lucide-react";
 import {
+  templates,
+  type TemplateKey,
   emptyResume,
   sampleResume,
   parseResume,
@@ -740,7 +742,7 @@ export default function Home() {
                   onClick={() => setModal("templates")}
                 >
                   <LayoutTemplate size={15} />
-                  {resume.template === "classic" ? "经典单栏" : "简洁双栏"}
+                  {templates[resume.template].name}
                   <ChevronRight size={14} />
                 </button>
               </div>
@@ -902,9 +904,10 @@ export default function Home() {
             <h2>选择你的简历风格</h2>
             <p className="modal-subtitle">切换排版，内容完整保留。</p>
             <div className="template-cards">
-              {(["classic", "sidebar"] as const).map((t) => (
+              {(Object.keys(templates) as TemplateKey[]).map((t) => (
                 <button
                   key={t}
+                  aria-pressed={resume.template === t}
                   className={
                     "template-card " + (resume.template === t ? "chosen" : "")
                   }
@@ -924,11 +927,9 @@ export default function Home() {
                       <i />
                     </div>
                   </div>
-                  <strong>{t === "classic" ? "经典单栏" : "简洁双栏"}</strong>
+                  <strong>{templates[t].name}</strong>
                   <span>
-                    {t === "classic"
-                      ? "清晰稳重，适合大多数岗位"
-                      : "侧栏展示技能，层次更鲜明"}
+                    {templates[t].description}
                   </span>
                   {resume.template === t && <Check size={17} />}
                 </button>

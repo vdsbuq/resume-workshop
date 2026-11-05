@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { emptyResume, sampleResume, parseResume } from "../lib/resume";
+import { emptyResume, sampleResume, parseResume, templates, type TemplateKey } from "../lib/resume";
 import { POST } from "../app/api/polish/route";
 
 test("示例和空白简历均可备份往返", () => {
@@ -129,4 +129,12 @@ test("AI 接口配置、口令、校验、正常结果和服务错误", async ()
     if (oldPassword === undefined) delete process.env.DEMO_PASSWORD;
     else process.env.DEMO_PASSWORD = oldPassword;
   }
+});
+
+test("所有模板备份往返保持内容，旧模板兼容，未知模板拒绝", () => {
+  for (const template of Object.keys(templates) as TemplateKey[]) {
+    const resume = { ...sampleResume(), template };
+    assert.deepEqual(parseResume(JSON.parse(JSON.stringify(resume))), resume);
+  }
+  assert.throws(() => parseResume({ ...sampleResume(), template: "unknown" }));
 });

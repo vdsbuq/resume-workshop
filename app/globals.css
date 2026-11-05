@@ -1231,3 +1231,34 @@ main {
 }
 @media (prefers-reduced-motion: reduce) { .analysis-chevron { transition: none; } }
 @media print { .job-analysis { display: none !important; } }
+
+/* Original template designs, sharing the same content and print structure. */
+.academic { font-family: "Times New Roman", "Songti SC", SimSun, serif; color: #202020; }
+.academic .resume-header { text-align: center; border-bottom: 1px solid #222; }
+.academic .resume-contact { justify-content: center; }
+.academic .resume-header h1, .academic .resume-role, .academic .resume-section h2,
+.academic .resume-entry ul, .academic .summary-text, .academic .resume-skills p { color: #222; }
+.academic .resume-section h2 { border-bottom: 1px solid #555; letter-spacing: 2px; }
+.academic .resume-section h2:before, .modern .resume-section h2:before, .elegant .resume-section h2:before { display: none; }
+.modern .resume-header { border-bottom: 0; border-left: 4px solid #397f7a; padding-left: 18px; }
+.modern .resume-header h1 { color: #245b58; letter-spacing: 2px; }
+.modern .resume-section h2 { color: #245b58; display: flex; align-items: center; gap: 12px; border: 0; }
+.modern .resume-section h2:after { content: ""; height: 1px; background: #ccdeda; flex: 1; }
+.modern .resume-role { color: #397f7a; }
+.elegant .resume-header { border-top: 3px solid #36445b; border-bottom: 1px solid #c0b395; padding-top: 18px; }
+.elegant .resume-header h1 { font-family: Georgia, "Songti SC", SimSun, serif; color: #303d52; }
+.elegant .resume-section h2 { border-bottom: 1px solid #c0b395; color: #675a3f; letter-spacing: 2px; }
+.elegant .entry-subtitle { font-style: italic; }
+.template-cards { gap: 12px; }
+.template-card { min-width: 0; }
+.template-card > span { line-height: 1.6; }
+.mini-academic b { margin-left: auto; margin-right: auto; background: #333; }
+.mini-academic i { background: #c7c7c7; }
+.mini-academic > div { border-top: 1px solid #555; }
+.mini-modern { border-left: 3px solid #397f7a; }
+.mini-modern b { background: #397f7a; }
+.mini-modern > div { border-top: 1px solid #b5d5ce; }
+.mini-elegant { border-top: 3px solid #36445b; }
+.mini-elegant b { background: #36445b; }
+.mini-elegant > div { border-top: 1px solid #c0b395; }
+@media (max-width: 420px) { .template-cards { grid-template-columns: 1fr; } }
