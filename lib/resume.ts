@@ -17,6 +17,7 @@ export type Entry = {
 };
 export type Resume = {
   version: 1;
+  photo?: string;
   template: TemplateKey;
   personal: {
     name: string;
@@ -129,6 +130,8 @@ export function parseResume(value: unknown): Resume {
     emptyResume().personal,
   ) as (keyof Resume["personal"])[])
     if (!isText(r.personal[key])) throw new Error("个人信息格式不正确");
+  if (r.photo !== undefined && (typeof r.photo !== "string" || r.photo.length > 500000 || !/^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(r.photo)))
+    throw new Error("照片格式不正确或过大");
   const ids = new Set<string>();
   for (const section of [
     "education",
@@ -153,6 +156,7 @@ export function parseResume(value: unknown): Resume {
   return {
     version: 1,
     template: r.template,
+    ...(r.photo ? { photo: r.photo } : {}),
     personal: Object.fromEntries(
       Object.keys(emptyResume().personal).map((k) => [
         k,

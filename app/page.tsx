@@ -1,5 +1,6 @@
 "use client";
 
+import PhotoUpload from "./photo-upload";
 import JobAnalysis from "./job-analysis";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -136,7 +137,8 @@ function ResumePreview({ resume }: { resume: Resume }) {
   });
   return (
     <div className={"resume-sheet " + resume.template} id="resume-document">
-      <header className="resume-header">
+      <header className={"resume-header" + (resume.photo ? " has-photo" : "")}>
+        {resume.photo && <img className="resume-photo" src={resume.photo} alt="简历证件照" />}
         <h1>{p.name || "你的姓名"}</h1>
         {p.role && <p className="resume-role">{p.role}</p>}
         <div className="resume-contact">
@@ -500,6 +502,7 @@ export default function Home() {
                       <UserRound size={23} />
                     </div>
                     <div className="fields-grid">
+                      <PhotoUpload value={resume.photo} onChange={(photo) => setResume(r => { const next = { ...r }; if (photo) next.photo = photo; else delete next.photo; return next; })} />
                       <Field
                         label="姓名"
                         value={resume.personal.name}

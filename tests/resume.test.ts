@@ -138,3 +138,9 @@ test("所有模板备份往返保持内容，旧模板兼容，未知模板拒�
   }
   assert.throws(() => parseResume({ ...sampleResume(), template: "unknown" }));
 });
+
+test("照片备份保留且拒绝远程地址和过大数据", () => {
+  const resume = { ...sampleResume(), photo: "data:image/jpeg;base64,/9j/" };
+  assert.deepEqual(parseResume(resume), resume);
+  for (const photo of ["https://example.com/a.jpg", "data:image/svg+xml;base64,AAAA", "a".repeat(500001)]) assert.throws(() => parseResume({ ...sampleResume(), photo }));
+});

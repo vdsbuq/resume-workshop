@@ -1262,3 +1262,13 @@ main {
 .mini-elegant b { background: #36445b; }
 .mini-elegant > div { border-top: 1px solid #c0b395; }
 @media (max-width: 420px) { .template-cards { grid-template-columns: 1fr; } }
+
+.photo-upload { display: flex; gap: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; align-items: start; }
+.photo-upload > img, .photo-placeholder { width: 66px; height: 88px; object-fit: contain; background: #f4f7fc; border-radius: 5px; flex-shrink: 0; }
+.photo-placeholder { display: grid; place-content: center; text-align: center; color: #8992a3; font-size: 12px; }
+.photo-upload > div:last-child { min-width: 0; flex: 1; }
+.photo-upload small { display: block; color: #7a879c; line-height: 1.7; margin: 8px 0; }
+.photo-upload input { padding: 6px; font-size: 11px; }
+.resume-header.has-photo { position: relative; padding-right: 90px; min-height: 105px; }
+.resume-photo { position: absolute; right: 0; top: 0; width: 72px; height: 96px; object-fit: contain; }
+@media print { .resume-header.has-photo { padding-right: 29mm; min-height: 36mm; } .resume-photo { width: 24mm; height: 32mm; } }
