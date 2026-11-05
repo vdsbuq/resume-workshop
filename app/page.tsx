@@ -1,5 +1,6 @@
 "use client";
 
+import JobAnalysis from "./job-analysis";
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowDown,
@@ -398,7 +399,7 @@ export default function Home() {
               <h1>
                 把经历，写成机会<span>.</span>
               </h1>
-              <p>从第一份实习开始，做一份属于你的好简历。</p>
+              <p>读懂岗位要求，梳理经历证据，制定求职准备计划。</p>
             </div>
             <div className="heading-note">
               <span className="tiny-spark">
@@ -410,6 +411,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <JobAnalysis resume={resume} />
           <div className="workspace-toolbar">
             <div className="document-name">
               <FileText size={17} />

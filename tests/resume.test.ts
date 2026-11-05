@@ -95,6 +95,15 @@ test("AI 接口配置、口令、校验、正常结果和服务错误", async ()
     assert.deepEqual(await res.json(), {
       suggestion: "使用 Excel 整理问卷数据。",
     });
+    assert.equal((await POST(req({ action: "analyze", text: "a".repeat(16001) }))).status, 400);
+    globalThis.fetch = async (_input, init) => {
+      const payload = JSON.parse(String(init?.body));
+      assert.equal(payload.max_tokens, 2500);
+      assert.match(payload.messages[0].content, /未体现不等于/);
+      assert.equal(payload.messages[1].content.length, 3000);
+      return Response.json({ choices: [{ message: { content: "岗位要求：SQL；简历未体现，请核实。" } }] });
+    };
+    assert.equal((await POST(req({ action: "analyze", text: "岗".repeat(3000) }))).status, 200);
     globalThis.fetch = async () => new Response("", { status: 429 });
     assert.equal(
       (await POST(req({ action: "polish", text: "经历" }))).status,
