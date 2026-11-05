@@ -1117,7 +1117,7 @@ main {
     padding-bottom: 5mm;
   }
   .resume-header h1 {
-    font-size: 25pt !important;
+    font-size: 16pt !important;
   }
   .resume-role {
     font-size: 11pt;
@@ -1286,3 +1286,6 @@ main {
   .resume-entry ul, .summary-text, .resume-skills p { line-height: 1.65; }
   .resume-header { margin-bottom: 4mm; padding-bottom: 3mm; }
 }
+
+@media screen { .resume-sheet .resume-header h1 { font-size: 19px; letter-spacing: 1.5px; } }
+@media print { .resume-sheet .resume-header h1 { letter-spacing: 1pt; } }
