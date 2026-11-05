@@ -28,6 +28,10 @@ export type Resume = {
     city: string;
     link: string;
     summary: string;
+    age?: string;
+    hometown?: string;
+    politicalStatus?: string;
+    graduation?: string;
   };
   education: Entry[];
   projects: Entry[];
@@ -69,6 +73,7 @@ export function sampleResume(): Resume {
       phone: "138 0000 0000",
       email: "zhixia@example.com",
       city: "上海",
+      graduation: "2027 年 6 月",
       link: "github.com/example",
       summary:
         "信息管理与信息系统专业在读，具备 SQL 查询、Python 数据清洗及 Excel 可视化经验。参与调研分析与经营看板项目，能够从业务问题出发整理指标、分析差异并清晰汇报。",
@@ -141,6 +146,14 @@ export function parseResume(value: unknown): Resume {
     if (!isText(r.personal[key])) throw new Error("个人信息格式不正确");
   if (r.photo !== undefined && (typeof r.photo !== "string" || r.photo.length > 500000 || !/^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(r.photo)))
     throw new Error("照片格式不正确或过大");
+  const optionalPersonal: Partial<Resume["personal"]> = {};
+  for (const key of ["age", "hometown", "politicalStatus", "graduation"] as const) {
+    const field = r.personal[key];
+    if (field !== undefined) {
+      if (typeof field !== "string" || field.length > 500) throw new Error("选填个人信息格式不正确");
+      if (field.trim()) optionalPersonal[key] = field;
+    }
+  }
   const ids = new Set<string>();
   for (const section of [
     "education",
@@ -166,12 +179,12 @@ export function parseResume(value: unknown): Resume {
     version: 1,
     template: r.template,
     ...(r.photo ? { photo: r.photo } : {}),
-    personal: Object.fromEntries(
+    personal: { ...optionalPersonal, ...Object.fromEntries(
       Object.keys(emptyResume().personal).map((k) => [
         k,
         r.personal[k as keyof Resume["personal"]],
       ]),
-    ) as Resume["personal"],
+    ) } as Resume["personal"],
     education: r.education.map(cleanEntry),
     projects: r.projects.map(cleanEntry),
     experience: r.experience.map(cleanEntry),

@@ -144,3 +144,13 @@ test("照片备份保留且拒绝远程地址和过大数据", () => {
   assert.deepEqual(parseResume(resume), resume);
   for (const photo of ["https://example.com/a.jpg", "data:image/svg+xml;base64,AAAA", "a".repeat(500001)]) assert.throws(() => parseResume({ ...sampleResume(), photo }));
 });
+
+test("选填基本信息兼容旧备份并校验字段", () => {
+  const resume = sampleResume();
+  resume.personal.age = "22 岁";
+  resume.personal.hometown = "浙江杭州";
+  assert.deepEqual(parseResume(resume), resume);
+  assert.throws(() => parseResume({ ...resume, personal: { ...resume.personal, age: 22 } }));
+  const old = emptyResume();
+  assert.deepEqual(parseResume(old), old);
+});

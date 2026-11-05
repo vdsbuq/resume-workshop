@@ -140,10 +140,14 @@ function ResumePreview({ resume }: { resume: Resume }) {
       <header className={"resume-header" + (resume.photo ? " has-photo" : "")}>
         {resume.photo && <img className="resume-photo" src={resume.photo} alt="简历证件照" />}
         <h1>{p.name || "你的姓名"}</h1>
-        {p.role && <p className="resume-role">{p.role}</p>}
+        {p.role && <p className="resume-role">求职意向：{p.role}</p>}
         <div className="resume-contact">
-          {[p.phone, p.email, p.city, p.link].filter(Boolean).map((v, i) => (
-            <span key={i}>{v}</span>
+          {([
+            ["电话", p.phone], ["邮箱", p.email], ["现居地", p.city],
+            ["毕业时间", p.graduation], ["年龄", p.age], ["籍贯", p.hometown],
+            ["政治面貌", p.politicalStatus], ["个人链接", p.link],
+          ] as const).filter(([, value]) => value?.trim()).map(([label, value]) => (
+            <span key={label}><b>{label}：</b>{value}</span>
           ))}
         </div>
       </header>
@@ -539,6 +543,12 @@ export default function Home() {
                         placeholder="GitHub / 作品集地址"
                         onChange={(v) => patchPersonal("link", v)}
                       />
+                      {([
+                        ["age", "年龄（选填）", "例如：22 岁"],
+                        ["hometown", "籍贯（选填）", "例如：浙江杭州"],
+                        ["politicalStatus", "政治面貌（选填）", "根据申请需要填写"],
+                        ["graduation", "毕业时间（选填）", "例如：2027 年 6 月"],
+                      ] as const).map(([key, label, placeholder]) => <Field key={key} label={label} placeholder={placeholder} value={resume.personal[key] ?? ""} onChange={v => patchPersonal(key, v)} />)}
                       <Field
                         label="个人简介（选填）"
                         multiline

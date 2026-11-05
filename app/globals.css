@@ -1289,3 +1289,9 @@ main {
 
 @media screen { .resume-sheet .resume-header h1 { font-size: 19px; letter-spacing: 1.5px; } }
 @media print { .resume-sheet .resume-header h1 { letter-spacing: 1pt; } }
+
+.resume-contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; text-align: left; }
+.resume-contact span { min-width: 0; overflow-wrap: anywhere; }
+.resume-contact span + span:before { content: none; }
+.resume-contact b { font-weight: 500; color: #54647b; }
+@media screen and (max-width: 420px) { .resume-header.has-photo .resume-contact { grid-template-columns: 1fr; } }
