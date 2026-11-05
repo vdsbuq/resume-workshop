@@ -1,3 +1,4 @@
+import { samplePhoto } from "./sample-photo";
 export const templates = {
   classic: { name: "经典单栏", description: "蓝色分隔，清晰稳重" },
   sidebar: { name: "简洁双栏", description: "技能侧栏，突出信息层次" },
@@ -61,6 +62,7 @@ export function emptyResume(): Resume {
 export function sampleResume(): Resume {
   return {
     ...emptyResume(),
+    photo: samplePhoto,
     personal: {
       name: "林知夏",
       role: "数据分析实习生",
@@ -69,7 +71,7 @@ export function sampleResume(): Resume {
       city: "上海",
       link: "github.com/example",
       summary:
-        "信息管理与信息系统专业在读，关注数据如何支持业务决策。具备数据整理、可视化与团队协作经验，期待在真实业务中持续学习。",
+        "信息管理与信息系统专业在读，具备 SQL 查询、Python 数据清洗及 Excel 可视化经验。参与调研分析与经营看板项目，能够从业务问题出发整理指标、分析差异并清晰汇报。",
     },
     education: [
       {
@@ -96,21 +98,28 @@ export function sampleResume(): Resume {
         subtitle: "团队成员 · 调研与展示",
         period: "2025.11 — 2026.04",
         description:
-          "参与问卷设计与访谈整理，将调研发现转化为用户画像。\n负责汇报材料的图表设计与排版，团队获校赛二等奖。",
+          "参与设计 18 道问卷题目，整理访谈记录，按消费频次与预算划分用户画像。\n对比不同群体的渠道偏好，制作交叉分析图表，形成校园服务改进建议。\n负责答辩材料与图表呈现，团队获校赛二等奖（虚构演示经历）。",
       },
     ],
     experience: [
+      {
+        id: "intern-1",
+        title: "星禾零售科技（虚构企业）",
+        subtitle: "运营分析实习生 · 经营支持组",
+        period: "2026.07 — 2026.09",
+        description: "使用 SQL 汇总 3 家门店的订单与商品数据，核对销售额、客单价及退款率的统计口径。\n搭建 Excel 周报，按门店、品类和活动拆解销售变化，输出 8 期经营分析简报。\n排查重复订单与缺失商品编码，维护异常记录，与运营同事核实后更新数据。",
+      },
       {
         id: "exp-1",
         title: "校青年志愿者协会",
         subtitle: "项目部干事",
         period: "2024.09 — 2025.06",
         description:
-          "协助组织校园志愿活动，负责报名信息整理、现场协调与活动复盘。\n维护活动记录表，及时同步任务进度，支持跨部门合作。",
+          "协助组织 6 场校园志愿活动，维护报名、签到与工时台账，协调现场分工。\n整理参与反馈并编写复盘纪要，将常见问题汇总为后续活动检查清单。",
       },
     ],
     skills:
-      "数据工具：Python（Pandas）、Excel、SQL\n协作表达：信息整理、数据可视化、报告撰写\n语言证书：大学英语六级、普通话二级甲等",
+      "数据处理：SQL 多表连接与分组聚合；Python / Pandas 清洗与汇总\n分析展示：Excel 数据透视表、常用函数；Matplotlib 图表；PowerPoint 汇报\n业务方法：指标口径整理、问卷分析、用户分组、经营周报\n语言证书：大学英语六级（CET-6）、普通话二级甲等",
   };
 }
 const isText = (v: unknown): v is string =>

@@ -125,3 +125,5 @@ pnpm start
 ## 模板设计参考
 
 参考 [Harvard 简历资源](https://careerservices.fas.harvard.edu/resources/?ctag%5B%5D=resume-cv-cover-letter-templates&shared_category=student) 的条目式信息组织，以及 [Overleaf 简历模板集](https://www.overleaf.com/latex/templates/tagged/cv) 中简约、学术和现代风格的设计方向。本项目独立实现 CSS 排版，不复制第三方模板代码或声称官方授权。五套模板共享同一份数据，切换后保存、备份与导入均保留模板选择。打印使用对应模板样式，较长内容仍需检查分页。
+
+示例简历含原创插画头像，人物、院校、企业、经历与成果均为虚构，仅用于展示排版。已有编辑记录不会自动被新示例覆盖；点击“加载示例”并确认可查看新版，操作前请备份自己的内容。

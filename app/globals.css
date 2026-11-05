@@ -1272,3 +1272,17 @@ main {
 .resume-header.has-photo { position: relative; padding-right: 90px; min-height: 105px; }
 .resume-photo { position: absolute; right: 0; top: 0; width: 72px; height: 96px; object-fit: contain; }
 @media print { .resume-header.has-photo { padding-right: 29mm; min-height: 36mm; } .resume-photo { width: 24mm; height: 32mm; } }
+
+/* Denser resume rhythm without shrinking the text. */
+.resume-section { margin-bottom: 12px; }
+.resume-entry { margin-bottom: 9px; }
+.resume-section h2 { margin-bottom: 7px; padding-bottom: 4px; }
+.resume-entry ul { line-height: 1.75; }
+.resume-entry li { margin-bottom: 1px; }
+.resume-header { margin-bottom: 14px; padding-bottom: 12px; }
+@media print {
+  .resume-section { margin-bottom: 3.5mm; }
+  .resume-entry { margin-bottom: 3mm; }
+  .resume-entry ul, .summary-text, .resume-skills p { line-height: 1.65; }
+  .resume-header { margin-bottom: 4mm; padding-bottom: 3mm; }
+}
