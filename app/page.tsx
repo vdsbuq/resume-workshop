@@ -408,8 +408,13 @@ export default function Home() {
                 把经历，写成机会<span>.</span>
               </h1>
               <p>读懂岗位要求，梳理经历证据，制定求职准备计划。</p>
+              <div className="feature-chips" aria-label="项目特点">
+                <span><LayoutTemplate size={13} /> 五种简历风格</span>
+                <span><Sparkles size={13} /> AI 经历润色</span>
+                <span><ShieldCheck size={13} /> 本地自动保存</span>
+              </div>
             </div>
-            <div className="heading-note">
+            <div className="heading-note note-sticker">
               <span className="tiny-spark">
                 <Sparkles size={19} />
               </span>

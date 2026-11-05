@@ -4,7 +4,7 @@
   --muted: #8992a3;
   --line: #e8ecf2;
   --bg: #f6f8fc;
-  --font: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+  --font: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -1295,3 +1295,47 @@ main {
 .resume-contact span + span:before { content: none; }
 .resume-contact b { font-weight: 500; color: #54647b; }
 @media screen and (max-width: 420px) { .resume-header.has-photo .resume-contact { grid-template-columns: 1fr; } }
+
+/* Quiet editorial details for the workspace, never the exported resume. */
+.feature-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.feature-chips span { display: inline-flex; align-items: center; gap: 5px; padding: 5px 9px; border: 1px solid #e0e8f5; border-radius: 20px; background: #fff; color: #5e7395; font-size: 11px; line-height: 1.5; }
+.feature-chips span:nth-child(2) { background: #f0f3ff; border-color: #e2e7fb; color: #6875a7; }
+.feature-chips span:nth-child(3) { background: #edf7f3; border-color: #dceee6; color: #538472; }
+.note-sticker { position: relative; background: #fffdf6; border-color: #eee7d5; border-radius: 4px 14px 14px 14px; box-shadow: 0 6px 16px #7c6a3810; transform: rotate(1deg); }
+.note-sticker:before { content: ""; position: absolute; width: 48px; height: 13px; top: -7px; left: 24px; background: #dce7f1b3; transform: rotate(-7deg); }
+.note-sticker .tiny-spark { background: #fff8e8; border-color: #eee3c7; color: #ad8b49; }
+@media screen {
+  .editor-panel, .preview-panel { border-radius: 14px; }
+  .editor-intro { background: linear-gradient(115deg, #f9fbff, #fff); }
+  .step-label { font-size: 10px; color: #73839c; }
+  .progress-label, .save-status { font-size: 11px; color: #64758d; }
+  .progress-track { height: 4px; }
+  .progress-track span { background: linear-gradient(90deg, #3264de, #86a6ee); border-radius: 4px; }
+  .section-tabs { padding-top: 5px; gap: 4px; }
+  .section-tabs button { font-size: 11px; border-radius: 8px 8px 0 0; color: #66768e; }
+  .section-tabs button:hover:not(.active) { background: #f6f8fc; }
+  .section-tabs button.active { font-weight: 600; }
+  .field > span { font-size: 12px; font-weight: 500; }
+  .section-heading p { font-size: 12px; color: #718099; }
+  .section-heading > svg { padding: 8px; width: 38px; height: 38px; background: #f0f4fc; border-radius: 11px; color: #8099bf; }
+  .writing-tip { border-radius: 10px; border-left: 3px solid #a5bce8; background: #f7f9fe; }
+  .writing-tip strong { font-size: 12px; color: #5473a2; font-weight: 600; }
+  .writing-tip p { font-size: 11px; color: #71839f; }
+  .editor-bottom { font-size: 11px; color: #74839a; line-height: 1.7; }
+  .preview-panel { background-color: #edf1f7; background-image: radial-gradient(#cbd5e180 .65px, transparent .65px); background-size: 10px 10px; }
+  .preview-toolbar { background: #f9fbfe; }
+  .a4-badge { font-size: 10px; color: #697b96; padding: 2px 6px; border-radius: 5px; }
+  .template-button { font-size: 11px; border-radius: 7px; min-height: 34px; }
+  .template-button:hover { background: #edf3ff; border-color: #b8caee; color: #3264de; }
+  .resume-sheet { box-shadow: 0 8px 28px #26375912, 0 1px 3px #2637590c; }
+  .preview-caption { font-size: 11px; color: #708098; line-height: 1.7; padding: 0 12px; text-align: center; }
+  .entry-editor { border-radius: 10px; }
+  .toolbar-actions button { min-height: 32px; }
+}
+@media (max-width: 700px) {
+  .feature-chips { gap: 6px; margin-top: 12px; }
+  .feature-chips span { font-size: 10px; padding: 4px 7px; }
+  .section-tabs { gap: 0; }
+  .section-tabs button { font-size: 10px; }
+}
+@media print { .feature-chips, .note-sticker { display: none !important; } }
