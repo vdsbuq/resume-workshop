@@ -2,7 +2,7 @@
 
 面向大学生的全栈 AI 简历编辑与求职决策助手，作为「大数据与管理决策」课程的 vibe coding 项目开发。
 
-> 在线地址：https://resume-workshop.resume-workshop.workers.dev 。已部署到 Cloudflare Workers，首次域名启用后的访问验证正在进行。默认内容全部为虚构示例。
+> 在线地址（打开需要代理网络）：https://resume-workshop.resume-workshop.workers.dev 。已部署到 Cloudflare Workers，首次域名启用后的访问验证正在进行。默认内容全部为虚构示例。
 
 ## 需求与课程关联
 
