@@ -21,6 +21,7 @@
 使用 OpenNext 适配，运行 `pnpm cf:build` 后运行 `pnpm cf:deploy`。服务端配置通过 Wrangler Secrets 设置 `DEEPSEEK_API_KEY` 和 `DEMO_PASSWORD`，不能提交到仓库。Windows 如遇符号链接权限错误，可在临时目录使用 npm 普通依赖布局构建，保留原仓库不变。已构建的产物可以使用 `wrangler deploy --no-autoconfig` 发布，避免重复框架检测。
 
 ![简历工坊界面](docs/preview.jpg)
+（此界面为旧版本展示，新版本请进入在线网址查看）
 
 ## 基本用途
 
