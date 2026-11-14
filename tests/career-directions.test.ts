@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {classifyDirection,directions} from '../lib/career-directions';import {parseCareerDraft} from '../lib/career-storage';import jobs from '../data/jobs.json';
+test('product operations stays in operations, not product',()=>{assert.equal(classifyDirection('大模型Agent产品运营实习生'),'operations');assert.equal(classifyDirection('AI搜索产品实习生'),'product');});
+test('each exposed direction has a real collected sample',()=>{for(const d of directions)assert.ok(jobs.jobs.some(j=>classifyDirection(j.title)===d.id),d.id);});
+test('old drafts remain compatible and new selections validate',()=>{const old={version:1,step:0,company:'',jobId:'',material:'',states:{},completed:{},notes:{}};assert.deepEqual(parseCareerDraft(old),old);assert.equal(parseCareerDraft({...old,direction:'frontend',major:'软件工程'}).direction,'frontend');assert.throws(()=>parseCareerDraft({...old,direction:'invented'}));});

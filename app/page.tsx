@@ -426,7 +426,7 @@ export default function Home() {
             <div><span className="journey-icon"><Sparkles size={20} /></span><div><small>STEP 02</small><strong>找到岗位契合点</strong><p>对照岗位要求，用真实证据完善表达</p></div><span className="journey-number" aria-hidden="true">02</span></div>
             <div><span className="journey-icon"><FileText size={20} /></span><div><small>STEP 03</small><strong>准备好投递</strong><p>选择简历风格，检查并导出 PDF</p></div><span className="journey-number" aria-hidden="true">03</span></div>
           </div>
-          <JobAnalysis resume={resume} />
+          <div style={{ marginBottom: 20 }}><a className="button primary" href="/career">岗位需求与实践规划：先了解岗位，再积累经历</a></div><JobAnalysis resume={resume} />
           <div className="workspace-toolbar">
             <div className="document-name">
               <FileText size={17} />
@@ -1002,3 +1002,4 @@ export default function Home() {
     </>
   );
 }
+

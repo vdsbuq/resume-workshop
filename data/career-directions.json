@@ -1,0 +1,8 @@
+[
+ {"id":"data","label":"数据分析实习","keywords":["数据分析"]},
+ {"id":"frontend","label":"前端开发实习","keywords":["前端"]},
+ {"id":"operations","label":"产品与内容运营实习","keywords":["运营"]},
+ {"id":"product","label":"产品实习","keywords":["产品"]},
+ {"id":"research","label":"用户研究实习","keywords":["用户研究"]},
+ {"id":"testing","label":"模型评估与测试实习","keywords":["评估","测试"]}
+]
