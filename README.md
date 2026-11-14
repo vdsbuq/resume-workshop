@@ -2,7 +2,7 @@
 
 面向大学生的全栈 AI 简历编辑与求职决策助手，作为「大数据与管理决策」课程的 vibe coding 项目开发。
 
-> 在线地址：https://resume-workshop.resume-workshop.workers.dev 。已部署到 Cloudflare Workers，首次域名启用后的访问验证正在进行。默认内容全部为虚构示例。
+> 在线地址（打开需要代理网络）：https://resume-workshop.resume-workshop.workers.dev 。已部署到 Cloudflare Workers，首次域名启用后的访问验证正在进行。默认内容全部为虚构示例。
 
 ## 需求与课程关联
 
@@ -21,6 +21,7 @@
 使用 OpenNext 适配，运行 `pnpm cf:build` 后运行 `pnpm cf:deploy`。服务端配置通过 Wrangler Secrets 设置 `DEEPSEEK_API_KEY` 和 `DEMO_PASSWORD`，不能提交到仓库。Windows 如遇符号链接权限错误，可在临时目录使用 npm 普通依赖布局构建，保留原仓库不变。已构建的产物可以使用 `wrangler deploy --no-autoconfig` 发布，避免重复框架检测。
 
 ![简历工坊界面](docs/preview.jpg)
+（此界面为旧版本展示，新版本请进入在线网址查看）
 
 ## 基本用途
 
