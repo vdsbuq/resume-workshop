@@ -1,8 +1,119 @@
 [
- {"id":"data","label":"数据分析实习","keywords":["数据分析"]},
- {"id":"frontend","label":"前端开发实习","keywords":["前端"]},
- {"id":"operations","label":"产品与内容运营实习","keywords":["运营"]},
- {"id":"product","label":"产品实习","keywords":["产品"]},
- {"id":"research","label":"用户研究实习","keywords":["用户研究"]},
- {"id":"testing","label":"模型评估与测试实习","keywords":["评估","测试"]}
+  {
+    "id": "finance",
+    "label": "财务与金融实习",
+    "keywords": [
+      "财务",
+      "会计",
+      "金融"
+    ]
+  },
+  {
+    "id": "hr",
+    "label": "人力资源实习",
+    "keywords": [
+      "人力资源",
+      "招聘交付",
+      "HR实习"
+    ]
+  },
+  {
+    "id": "legal",
+    "label": "法务实习",
+    "keywords": [
+      "法务"
+    ]
+  },
+  {
+    "id": "mechanical",
+    "label": "机械与自动化实习",
+    "keywords": [
+      "机械",
+      "机器人",
+      "自动化",
+      "现场服务"
+    ]
+  },
+  {
+    "id": "embedded",
+    "label": "电子与嵌入式实习",
+    "keywords": [
+      "嵌入式",
+      "硬件"
+    ]
+  },
+  {
+    "id": "design",
+    "label": "视觉与体验设计实习",
+    "keywords": [
+      "设计"
+    ]
+  },
+  {
+    "id": "supply",
+    "label": "供应链实习",
+    "keywords": [
+      "供应链",
+      "采购"
+    ]
+  },
+  {
+    "id": "backend",
+    "label": "后端开发实习",
+    "keywords": [
+      "后端",
+      "Java"
+    ]
+  },
+  {
+    "id": "algorithm",
+    "label": "算法研发实习",
+    "keywords": [
+      "算法",
+      "推理研发"
+    ]
+  },
+  {
+    "id": "data",
+    "label": "数据分析实习",
+    "keywords": [
+      "数据分析"
+    ]
+  },
+  {
+    "id": "frontend",
+    "label": "前端开发实习",
+    "keywords": [
+      "前端"
+    ]
+  },
+  {
+    "id": "operations",
+    "label": "产品与内容运营实习",
+    "keywords": [
+      "运营"
+    ]
+  },
+  {
+    "id": "product",
+    "label": "产品实习",
+    "keywords": [
+      "产品"
+    ]
+  },
+  {
+    "id": "research",
+    "label": "用户研究实习",
+    "keywords": [
+      "用户研究"
+    ]
+  },
+  {
+    "id": "testing",
+    "label": "模型评估与测试实习",
+    "keywords": [
+      "评估",
+      "测试"
+    ]
+  }
 ]

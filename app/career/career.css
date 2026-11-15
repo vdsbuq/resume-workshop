@@ -4,3 +4,7 @@
 .career-sync{margin:20px 0;padding:15px;background:#f3f7fc;border:1px solid #e0e8f4;border-radius:10px;font-size:12px;color:#788da9;line-height:1.8}.career-sync p{margin:6px 0}.career-sync input{accent-color:#416bd8;vertical-align:middle}
 
 .career-sync > button{margin:0 0 8px 16px;padding:7px 12px}.career-sync small{display:block;color:#64748b}.career-progress{display:flex;align-items:center;gap:12px;margin:14px 0;color:#526581;font-size:13px}.career-progress progress{flex:1;min-width:0;height:8px;accent-color:#3976d5}.career-progress span{white-space:nowrap}
+
+.competition-directory{margin-top:24px}.competition-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}.competition-grid article{border:1px solid #dce5ef;border-radius:14px;padding:18px;background:#f8fafc}.competition-grid h3{font-size:17px;margin:12px 0}.competition-grid p{font-size:13px;line-height:1.8;color:#526581}.competition-grid a{display:inline-block;margin-top:14px;color:#2863b6;font-weight:600}.competition-grid summary{font-size:13px;cursor:pointer}.competition-status{font-size:12px;color:#48678c;background:#e8eff9;border-radius:5px;padding:4px 7px}.competition-grid small{color:#64748b}@media(max-width:600px){.competition-grid{grid-template-columns:1fr}}
+
+.competition-directory>label{display:flex;align-items:center;gap:8px;font-size:14px}.competition-directory>label input{width:auto;margin:0}

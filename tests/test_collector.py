@@ -2,6 +2,10 @@ import importlib.util,json,unittest
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('collector',Path(__file__).parents[1]/'scripts/collect_jobs.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 class CollectorTests(unittest.TestCase):
+ def test_closed_platform_status_overrides_future_deadline(self):
+  job={'id':1,'jobName':'财务实习生','status':1,'deliverEnd':4824633600000,'createTime':1700000000000,'ext':json.dumps({'requirements':'会计','infos':'核对'})}
+  page='__INITIAL_STATE__='+json.dumps({'store':{'jobDetail':{'detail':job,'jobCompany':{'companyName':'示例'}}}})
+  self.assertEqual(m.parse(page,'https://www.nowcoder.com/jobs/detail/1')['availability'],'closed')
  def test_structured_parse(self):
   job={'name':'数据分析实习生','postId':'abc','serviceCondition':'掌握SQL','workContent':'统计分析'}
   result=m.parse('x "postInfo":'+json.dumps(job)+' ,"other":undefined','https://example.test')

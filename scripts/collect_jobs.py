@@ -11,6 +11,7 @@ DIRECTIONS=json.loads((ROOT/'data/career-directions.json').read_text(encoding='u
 def direction(title):
  return next((d['id'] for d in DIRECTIONS if any(k in title for k in d['keywords'])),None)
 SEEDS += ['https://www.nowcoder.com/jobs/detail/'+i for i in ['219048','437814','474247','25274','285187']]
+SEEDS += ['https://www.nowcoder.com/jobs/detail/'+i for i in ['464857','419435','458978','453161','462580','371953','210972','185370','439650','446230','439552','439426','470297','364026','447190','169956','429159','469447','461663']]
 UA='ResumeWorkshopResearch/0.1'
 def fetch(url):
  req=urllib.request.Request(url,headers={'User-Agent':UA})
@@ -25,7 +26,7 @@ def parse(page,url):
   if marker not in page:raise ValueError('Missing recruitment data')
   state,_=json.JSONDecoder().raw_decode(page.split(marker,1)[1]);detail=state['store']['jobDetail'];j=detail['detail'];ext=json.loads(j['ext'])
   if '实习' not in j['jobName'] or not direction(j['jobName']):raise ValueError('Outside selected job scope')
-  return dict(id='nowcoder-'+str(j['id']),title=j['jobName'],company=detail['jobCompany']['companyName'],city='、'.join(j.get('jobCityList',[])),published=datetime.datetime.fromtimestamp(j['createTime']/1000,datetime.timezone.utc).strftime('%Y-%m-%d'),requirements=ext['requirements'],duties=ext['infos'],url=url,collectedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),source='牛客招聘平台',deadline=j.get('deliverEnd'),sourceStatus=j.get('status'),availability='closed' if (isinstance(j.get('deliverEnd'),(int,float)) and 1000000000000<j['deliverEnd']<datetime.datetime.now(datetime.timezone.utc).timestamp()*1000) else 'listed')
+  return dict(id='nowcoder-'+str(j['id']),title=j['jobName'],company=detail['jobCompany']['companyName'],city='、'.join(j.get('jobCityList',[])),published=datetime.datetime.fromtimestamp(j['createTime']/1000,datetime.timezone.utc).strftime('%Y-%m-%d'),requirements=ext['requirements'],duties=ext['infos'],url=url,collectedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),source='牛客招聘平台',deadline=j.get('deliverEnd'),sourceStatus=j.get('status'),availability='closed' if (j.get('status')==1 or isinstance(j.get('deliverEnd'),(int,float)) and 1000000000000<j['deliverEnd']<datetime.datetime.now(datetime.timezone.utc).timestamp()*1000) else 'listed')
 
  marker='"postInfo":';start=page.find(marker)
  if start<0:raise ValueError('No structured vacancy found')
