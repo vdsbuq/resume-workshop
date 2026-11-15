@@ -1,0 +1,4 @@
+type Plan = {name:string;project:string;steps:string[];deliverables:string};
+export function exportPracticePlan(input:{direction:string;major:string;jobs:{title:string;url:string}[];plans:Plan[];states:Record<string,string>;completed:Record<string,boolean>;notes:Record<string,string>;resources:Record<string,{title:string;url:string}[]>}){
+ return ['目标：'+input.direction,'专业背景：'+input.major,'招聘依据：',...input.jobs.map(j=>`${j.title} ${j.url}`),...input.plans.map(p=>`${p.name}：${input.states[p.name]}\n${p.project}（自主练习方案）\n${p.steps.map((s,i)=>`${input.completed[p.name+':'+i]?'[已完成]':'[待完成]'} ${s}`).join('\n')}\n预期成果：${p.deliverables}\n我的实践记录与作品链接：\n${input.notes[p.name]?.trim()||'暂未记录'}\n资源：${(input.resources[p.name]||[]).map(r=>r.title+' '+r.url).join('\n')}`),'说明：完成状态为个人记录，不代表能力认证；只将真实完成的成果写入简历。'].join('\n\n');
+}
