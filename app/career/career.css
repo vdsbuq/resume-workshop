@@ -14,3 +14,5 @@
 @media(max-width:420px){.career-top{gap:8px;padding:0 12px}.career-brand{font-size:14px;gap:6px}.career-editor{gap:3px}.career-editor svg{width:13px}}
 
 .project-overview{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.project-overview>span{padding:12px 16px;border-radius:10px;background:#edf3ff;color:#496484;font-size:13px}.project-overview b{font-size:20px;color:#305fbd;margin:0 4px}
+
+.project-draft{flex-basis:100%;padding:20px;background:#eef4ff;border:1px solid #cbdaf4;border-radius:12px}.project-draft input{box-sizing:border-box;width:100%;padding:10px;border:1px solid #d4dfea;border-radius:7px;background:white}.project-draft label{margin-top:12px}
