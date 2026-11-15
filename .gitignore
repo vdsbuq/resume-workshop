@@ -12,3 +12,4 @@ test-results/
 
 data/*.sqlite
 __pycache__/
+data/refresh-logs/
