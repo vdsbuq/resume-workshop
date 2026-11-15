@@ -275,7 +275,7 @@ export default function Home() {
     );
     const a = document.createElement("a");
     a.href = url;
-    a.download = "简历工坊-备份.json";
+    a.download = "大学生求职准备站-备份.json";
     a.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     setNotice("备份已下载，可在其他设备上导入。");
@@ -388,7 +388,7 @@ export default function Home() {
               <FileText size={22} />
             </span>
             <span>
-              简历工坊<small>RESUME WORKSHOP</small>
+              大学生求职准备站<small>CAREER PREPARATION</small>
             </span>
           </a>
           <div className="topbar-right">
@@ -776,7 +776,7 @@ export default function Home() {
           </div>
           <footer className="page-footer">
             <span>
-              简历工坊 <span className="footer-dot">·</span>{" "}
+              大学生求职准备站 <span className="footer-dot">·</span>{" "}
               为你的下一步，认真准备。
             </span>
             <span>用真实经历，讲好自己的故事。</span>

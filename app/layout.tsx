@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "简历工坊 · 把经历，写成机会",
-  description: "面向大学生的简历编辑器。实时预览、AI 润色、A4 PDF 导出。",
+  title: "大学生求职准备站 · 查岗位 · 找项目 · 选竞赛 · 整理简历",
+  description: "查岗位 · 找项目 · 选竞赛 · 整理简历。从招聘需求出发，积累真实项目与竞赛经历。",
 };
 export default function RootLayout({
   children,
