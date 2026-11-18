@@ -2,6 +2,12 @@ import importlib.util,json,unittest
 from pathlib import Path
 spec=importlib.util.spec_from_file_location('collector',Path(__file__).parents[1]/'scripts/collect_jobs.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 class CollectorTests(unittest.TestCase):
+ def test_discovery_filters_scope_and_deduplicates(self):
+  valid={'name':'视觉设计实习生','postId':'24f9253e-9524-4d7a-87f8-ef31f9a3dd40'}
+  rows=[valid,valid,{'name':'视觉设计工程师','postId':valid['postId']},{'name':'运营实习生','postId':'../../bad'}]
+  self.assertEqual(m.discover_links('"listDetailData":'+json.dumps(rows)),['https://talent.baidu.com/jobs/detail/INTERN/'+valid['postId']])
+ def test_discovery_rejects_missing_list(self):
+  with self.assertRaises(ValueError):m.discover_links('<html>temporary error</html>')
  def test_closed_platform_status_overrides_future_deadline(self):
   job={'id':1,'jobName':'财务实习生','status':1,'deliverEnd':4824633600000,'createTime':1700000000000,'ext':json.dumps({'requirements':'会计','infos':'核对'})}
   page='__INITIAL_STATE__='+json.dumps({'store':{'jobDetail':{'detail':job,'jobCompany':{'companyName':'示例'}}}})
