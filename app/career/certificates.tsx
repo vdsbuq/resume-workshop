@@ -1,6 +1,6 @@
 const syllabus = 'https://ncre.neea.edu.cn/html1/report/2412/185-1.htm';
 
-const certificates = [
+export const certificates = [
   { title: '初级会计专业技术资格', directions: ['finance'], reason: '想投会计助理，可以先翻初级会计实务的样题。看到一张报销单，你知道该记到哪个科目吗？', practice: '用一组模拟凭证完成入账、对账和月末汇总。', url: 'https://ausm.mof.gov.cn/' },
   { title: '计算机二级 · MS Office 高级应用与设计', directions: ['finance','hr','operations','supply','research','product'], reason: '如果招聘要求里写了 Excel，先试试下面这道题。已经能独立做周报的话，再看企业有没有单独要求证书。', practice: '把一份原始明细整理成能按月份和类别筛选的汇总表。', url: syllabus },
   { title: '计算机二级 · Python 语言程序设计', directions: ['data','algorithm','testing'], reason: '刚学 Python，可以拿往年题检查自己会不会读文件、写函数。想投数据分析，再试着处理一份有空行和错别字的表。', practice: '写一个可以重复运行的脚本，清洗一份数据并记录异常行。', url: syllabus },

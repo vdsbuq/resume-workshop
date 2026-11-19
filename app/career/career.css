@@ -76,3 +76,14 @@
   .career-top .workspace-navigation {overflow-x:auto}
   .job-results .career-job {padding:16px 0}
 }
+
+.career-job .vacancy-title {font:inherit;color:#174d73;text-align:left;background:none;border:0;padding:0;cursor:pointer}
+.vacancy-title:hover,.vacancy-title:focus-visible {text-decoration:underline}
+.vacancy-preparation {background:#f1f6f8;border-left:3px solid #45728a;margin:14px 0;padding:16px}
+.vacancy-preparation header {display:flex;align-items:center;justify-content:space-between;gap:12px}
+.vacancy-preparation header h4 {margin:0}
+.vacancy-preparation button {cursor:pointer;background:white;border:1px solid #ccd8de;border-radius:5px;padding:5px 9px;color:#24485d}
+.vacancy-preparation dl {display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:14px}
+.vacancy-preparation dd {margin:0}
+.vacancy-preparation dd small {display:block;color:#536572}
+.vacancy-preparation dd a {color:#175474;text-decoration:underline;text-underline-offset:3px}
