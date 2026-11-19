@@ -111,14 +111,6 @@
 .listing-alert {font-size:14px;color:#784923}
 
 /* Campus vacancy index */
-.career .campus-masthead {
-  padding:28px clamp(18px,4vw,54px);
-  background:#ddefec;
-  border-left:7px solid #00705c;
-  border-radius:0;
-}
-.career .campus-masthead h1 {color:#123e37;font-size:clamp(28px,3vw,42px);letter-spacing:.025em}
-.career .campus-masthead p {color:#294e47}
 .job-results .vacancy-columns,.job-results .campus-vacancy .vacancy-row {
   display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.2fr) minmax(0,1fr) 6em;gap:16px;
   width:100%;align-items:baseline;text-align:left;
