@@ -110,21 +110,13 @@
 .role-source summary {cursor:pointer;font-size:15px}
 .listing-alert {font-size:14px;color:#784923}
 
-/* Campus vacancy index */
-.job-results .vacancy-columns,.job-results .campus-vacancy .vacancy-row {
-  display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.2fr) minmax(0,1fr) 6em;gap:16px;
-  width:100%;align-items:baseline;text-align:left;
-}
-.job-results .vacancy-columns {background:#eef4f2;color:#37544d;padding:11px 12px;font-size:14px}
-.job-results .campus-vacancy {display:block;padding:0}
-.job-results .campus-vacancy .vacancy-row {padding:18px 12px;color:#253b36;font-size:14px;line-height:1.6;text-decoration:none}
-.vacancy-row b {font-size:16px;color:#173c34}
-.campus-vacancy .vacancy-row:hover,.campus-vacancy .vacancy-row:focus-visible {background:#eff7f4}
-.vacancy-row:hover b,.vacancy-row:focus-visible b {text-decoration:underline;text-underline-offset:4px}
-@media(max-width:760px){
- .job-results .vacancy-columns {display:none}
- .job-results .campus-vacancy .vacancy-row {grid-template-columns:1fr auto;gap:4px 10px;padding:14px 2px}
- .vacancy-row b {grid-column:1/-1}
- .vacancy-row time {grid-column:1/-1}
- .vacancy-row time::before {content:'发布于 '}
-}
+
+.job-results .career-job.opening {display:block;padding:0}
+.opening-link {position:relative;display:block;width:100%;padding:19px 32px 19px 8px;border:0;background:transparent;text-align:left;font:inherit;color:#202c37;cursor:pointer}
+.opening-link strong {display:block;font-size:18px;line-height:1.45;font-weight:650;overflow-wrap:anywhere}
+.opening-meta,.opening-meta > span {display:flex;align-items:center;gap:5px}
+.opening-meta {flex-wrap:wrap;gap:4px 18px;margin-top:6px;font-size:14px;color:#43505b}
+.opening-arrow {position:absolute;right:8px;top:calc(50% - 9px);color:#445c70}
+.opening-link:hover,.opening-link:focus-visible {background:#f4f7fa}
+.opening-link:hover strong,.opening-link:focus-visible strong {color:#174d73}
+.opening-link:focus-visible {outline:2px solid #315d80;outline-offset:-2px}
