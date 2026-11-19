@@ -51,7 +51,7 @@ export default function Career(){
 
  return <div className="career-app">
  <nav className="career-top"><Link href="/" className="career-brand"><span><Layers size={20}/></span>大学生求职准备站</Link><nav className="workspace-navigation" aria-label="工作台区域"><button aria-current={step===0?'page':undefined} onClick={()=>{selectJob('');setStep(0);}}>找实习</button><button aria-current={step>0?'page':undefined} onClick={()=>{setStep(1);window.scrollTo(0,0);}}>我的准备</button></nav><Link href="/" className="career-editor"><FileText size={16}/> 简历编辑器 <ChevronRight size={14}/></Link></nav>
- <main className="career"><h1 className="portal-heading">{step===0 && !selectedJob && <span className="notice-mark" aria-hidden="true"><BriefcaseBusiness size={22} strokeWidth={1.7}/></span>}{step===0 ? (selectedJob?.title || '实习岗位') : '我的准备'}</h1>
+ <main className="career"><h1 className="portal-heading">{step===0 ? (selectedJob?.title || '实习岗位') : '我的准备'}</h1>
  {step>0 && <><p>{selectedJob ? selectedJob.company+' · '+selectedJob.title : directionLabel(direction)}</p><div className="career-save"><span role="status">{saveState}</span><div><button onClick={backup} disabled={!ready}>导出进度备份</button><button onClick={()=>restoreInput.current?.click()} disabled={!ready}>恢复备份</button><input type="file" accept=".json" hidden ref={restoreInput} onChange={e=>{restore(e.target.files?.[0]);e.target.value='';}}/></div></div><nav className="detail-tabs" aria-label="我的准备">{['我的经历','实践计划'].map((label,i)=><button key={label} aria-pressed={step===i+1} onClick={()=>setStep(i+1)}>{label}</button>)}</nav></>}
  {message&&<p className="career-note" role="status">{message}</p>}
  <div className="career-layout"><div className="career-main">
