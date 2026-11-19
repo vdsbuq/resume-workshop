@@ -87,3 +87,10 @@
 .vacancy-preparation dd {margin:0}
 .vacancy-preparation dd small {display:block;color:#536572}
 .vacancy-preparation dd a {color:#175474;text-decoration:underline;text-underline-offset:3px}
+
+.role-detail > h2 {margin:20px 0 6px}
+.role-detail .detail-tabs {display:flex;gap:16px;border-bottom:1px solid #cad6de;margin:18px 0}
+.detail-tabs button {background:transparent;color:#425562;border:0;padding:10px 3px;cursor:pointer}
+.detail-tabs button[aria-pressed=true] {border-bottom:3px solid #245a78;color:#163e54;font-weight:700}
+.role-detail .career-panel {padding:0;border:0;box-shadow:none}
+.role-detail .pre {white-space:pre-line;line-height:1.8}
