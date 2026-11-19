@@ -120,3 +120,10 @@
 .opening-link:hover,.opening-link:focus-visible {background:#f4f7fa}
 .opening-link:hover strong,.opening-link:focus-visible strong {color:#174d73}
 .opening-link:focus-visible {outline:2px solid #315d80;outline-offset:-2px}
+
+.career .portal-heading {margin:20px 0;font-size:clamp(22px,3vw,30px);line-height:1.3}
+.career-top .workspace-navigation button {border:0;background:none;color:#334553;font:inherit;padding:8px 4px;cursor:pointer}
+.career-top .workspace-navigation button[aria-current=page] {box-shadow:inset 0 -2px #315d80;color:#183d59;font-weight:650}
+.career-top .workspace-navigation {margin-left:auto}
+.role-actions {display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:16px 0}
+.career .career-main .opening-link:hover strong {color:#174d73}
