@@ -127,3 +127,9 @@
 .career-top .workspace-navigation {margin-left:auto}
 .role-actions {display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:16px 0}
 .career .career-main .opening-link:hover strong {color:#174d73}
+
+/* A pinned paper mark for the internship noticeboard. */
+.portal-heading:has(.notice-mark) {display:flex;align-items:center;gap:14px;padding:5px 0;letter-spacing:.02em}
+.notice-mark {position:relative;isolation:isolate;display:inline-grid;place-items:center;width:44px;height:40px;flex:none;color:#3e3422;background:#ffe39a;border:1px solid #d5af5e;border-radius:4px;transform:rotate(-5deg);box-shadow:2px 3px 0 #e7d8b8}
+.notice-mark::before {content:"";position:absolute;top:-4px;left:19px;width:7px;height:7px;border-radius:50%;background:#af4942;box-shadow:0 1px 1px #875d43}
+.notice-mark svg {transform:rotate(5deg)}
