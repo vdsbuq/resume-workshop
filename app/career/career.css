@@ -127,3 +127,11 @@
 .career-top .workspace-navigation {margin-left:auto}
 .role-actions {display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:16px 0}
 .career .career-main .opening-link:hover strong {color:#174d73}
+
+.job-analysis-tools .sample-caption {margin:14px 0;color:#344555;font-size:14px;line-height:1.65}
+.skill-evidence-list {margin:10px 0 0}
+.skill-evidence-list > details {border-top:1px solid #d9e0e6}
+.skill-evidence-list summary {padding:10px 0;cursor:pointer}
+.skill-evidence-list summary span {margin-left:14px;font-size:14px;color:#354757}
+.skill-evidence-list blockquote {margin:4px 0 14px;padding:0 12px;border-left:2px solid #bbcbd6;overflow-wrap:anywhere}
+.skill-evidence-list blockquote p {margin:0 0 5px;line-height:1.65}
