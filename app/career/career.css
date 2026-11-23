@@ -135,3 +135,14 @@
 .skill-evidence-list summary span {margin-left:14px;font-size:14px;color:#354757}
 .skill-evidence-list blockquote {margin:4px 0 14px;padding:0 12px;border-left:2px solid #bbcbd6;overflow-wrap:anywhere}
 .skill-evidence-list blockquote p {margin:0 0 5px;line-height:1.65}
+
+.saved-job {display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #dce3e9}
+.saved-job input {margin-right:8px}
+.saved-job button {flex:none;border:0;background:none;color:#285574;cursor:pointer}
+.comparison-scroll {max-width:100%;overflow:auto;margin:20px 0}
+.comparison table {width:100%;border-collapse:collapse}
+.comparison caption {text-align:left;font-weight:650;padding-bottom:10px}
+.comparison th,.comparison td {min-width:8em;vertical-align:top;padding:10px;text-align:left;border-bottom:1px solid #dee4e8}
+.comparison thead {background:#edf2f5}
+.comparison summary {cursor:pointer}
+.comparison > details {padding:8px 0}
