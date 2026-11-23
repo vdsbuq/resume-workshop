@@ -2,6 +2,8 @@ import {useState} from 'react';
 import {requirementEvidence, skillRules} from '@/lib/career';
 import {usableJob, type JobRecord} from '@/lib/job-feed';
 
+import {Changes} from './preparation-tools';
+
 type Props = {jobs:JobRecord[]; favorites:string[]; onRemove:(id:string)=>void; onBrowse:()=>void};
 
 export default function JobComparison({jobs,favorites,onRemove,onBrowse}:Props) {
@@ -30,7 +32,7 @@ export default function JobComparison({jobs,favorites,onRemove,onBrowse}:Props) 
           return <div className="saved-job" key={id}>
             <label><input type="checkbox" checked={checked} disabled={!job||(!checked&&compared.length===3)} onChange={()=>toggle(id)}/>
               {job ? job.company+' · '+job.title : '岗位已移出目录'}{job&&!usableJob(job)&&'（历史岗位）'}</label>
-            <button onClick={()=>{setSelection(prev=>prev.filter(key=>key!==id));onRemove(id);}}>取消收藏</button>
+            {job&&<Changes job={job}/>}<button onClick={()=>{setSelection(prev=>prev.filter(key=>key!==id));onRemove(id);}}>取消收藏</button>
           </div>;
         })}
       </>}

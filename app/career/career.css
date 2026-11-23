@@ -146,3 +146,8 @@
 .comparison thead {background:#edf2f5}
 .comparison summary {cursor:pointer}
 .comparison > details {padding:8px 0}
+
+.planner-fields {display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:12px 0}
+.planner-fields label {display:grid;gap:4px}
+.planner-fields input,.planner-fields select {max-width:100%;padding:7px;border:1px solid #adbcc7;border-radius:4px;font:inherit}
+.saved-job {flex-wrap:wrap}

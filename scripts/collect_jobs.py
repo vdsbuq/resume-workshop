@@ -46,12 +46,25 @@ def reconcile(previous, fresh, now):
  content={k:fresh.get(k) for k in ['title','company','city','requirements','duties','availability']}
  digest=hashlib.sha256(json.dumps(content,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
  fresh.update(contentHash=digest,lastAttemptAt=now,lastVerifiedAt=now,syncStatus='ok',contentChangedAt=now if not previous or previous.get('contentHash')!=digest else previous.get('contentChangedAt',now))
+ if previous:
+  changes=list(previous.get('changes',[]))
+  for field,label in [('title','职位名称'),('city','工作地点'),('requirements','任职要求'),('duties','岗位职责'),('availability','招聘状态')]:
+   before,after=str(previous.get(field) or ''),str(fresh.get(field) or '')
+   if before!=after:
+    # Keep the changed passage in long descriptions, rather than identical introductions.
+    offset=next((i for i,(a,b) in enumerate(zip(before,after)) if a!=b),min(len(before),len(after)))
+    start=max(0,offset-24)
+    changes.append(dict(at=now,label=label,before=before[start:offset+180] or '（空）',after=after[start:offset+180] or '（空）'))
+  if changes:fresh['changes']=changes[-8:]
  return fresh
 
 def failed(previous, now, error, missing=False):
  record=dict(previous)
  record.update(lastAttemptAt=now,syncStatus='missing' if missing else 'failed',syncError=error)
- if missing:record['availability']='unavailable'
+ if missing:
+  if previous.get('availability')!='unavailable':
+   record['changes']=(previous.get('changes',[])+[dict(at=now,label='招聘状态',before=str(previous.get('availability','')),after='unavailable')])[-8:]
+  record['availability']='unavailable'
  return record
 
 def main():
