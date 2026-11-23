@@ -11,8 +11,8 @@ export const certificates = [
 export default function Certificates({direction}: {direction: string}) {
   const matches = certificates.filter(item => item.directions.includes(direction));
   return <section className="career-panel competition-directory" id="certificates">
-    <div className="career-section-head"><div><h2>证书推荐</h2><p>下面是这个方向可考虑的考试。企业有没有要求持证，要看具体职位。</p></div></div>
-    {matches.length === 0 && <p>这个方向暂未收录专项证书。可以先查看岗位原文，把时间留给企业明确要求的技能和作品。</p>}
+    <div className="career-section-head"><div><h2>证书推荐</h2><p>这些考试可作参考。是否要求持证，看职位原文。</p></div></div>
+    {matches.length === 0 && <p>这个方向还没收录证书。</p>}
     <div className="competition-grid">{matches.map(item => <article key={item.title}>
       <h3>{item.title}</h3><p>{item.reason}</p><p><b>配套练习：</b>{item.practice}</p>
       <a href={item.url} target="_blank" rel="noreferrer">查看官方考试信息 ↗</a>
